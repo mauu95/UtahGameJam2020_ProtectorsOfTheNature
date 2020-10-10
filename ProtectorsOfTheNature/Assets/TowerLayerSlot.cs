@@ -19,6 +19,7 @@ public class TowerLayerSlot : MonoBehaviour
             if (hit.collider != null && hit.collider.gameObject.GetComponent<TowerLayerSlot>() != null)
             {
                 Instantiate(weapons[0].gameObject, transform.position, Quaternion.identity);
+                GetComponent<SpriteRenderer>().enabled = false;
             }
         }
     }
