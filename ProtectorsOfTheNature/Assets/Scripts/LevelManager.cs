@@ -50,11 +50,9 @@ public class LevelManager : Singleton<LevelManager>
             Transform spawnPoint = _spawnPoints[Random.Range(2, 3)];
             Vector3 position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z);
 
-            GameObject enemyGameObject = Instantiate(_planePrefab, position, Quaternion.identity);
+            Instantiate(_planePrefab, position, Quaternion.identity);
+            yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
         }
-
-
-        yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
     }
 
     private IEnumerator GenerateKamikaze()
@@ -64,9 +62,8 @@ public class LevelManager : Singleton<LevelManager>
             Transform spawnPoint = _spawnPoints[Random.Range(0, 1)];
             Vector3 position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z);
 
-            GameObject enemyGameObject = Instantiate(_kamikazePrefab, position, Quaternion.identity);
-
-            yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
+            Instantiate(_kamikazePrefab, position, Quaternion.identity);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
