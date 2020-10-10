@@ -296,7 +296,7 @@ MonoBehaviour:
   _moneyBaseText: 'Money:'
   _enemyPrefab: {fileID: 2134996462234004774, guid: 11b8691a32f1074469b35d2a5bef1074,
     type: 3}
-  _numberOfKamikaze: 4
+  _numberOfKamikaze: 20
   _initialMoney: 200
 --- !u!4 &346303752
 Transform:
