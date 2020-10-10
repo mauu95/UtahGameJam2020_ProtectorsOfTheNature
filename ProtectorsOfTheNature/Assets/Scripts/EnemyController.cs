@@ -2,13 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] [Range(2.0f, 10.0f)] private float _speed;
 
-    private Vector3 initialPosition;
+    private Vector3 _initialPosition;
 
     // Caching! Use this variable instead of the traditional one.
     private Transform _transform;
@@ -16,7 +15,7 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        initialPosition = transform.position;
+        _initialPosition = transform.position;
     }
 
     private void Awake()
@@ -26,10 +25,12 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (initialPosition.x < 0)
-        {
-            _transform.position += _speed * Time.fixedDeltaTime * transform.right;
-        }
+        if (_initialPosition.x < 0) _transform.position += _speed * Time.fixedDeltaTime * transform.right;
         else _transform.position += _speed * Time.fixedDeltaTime * -transform.right;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("TreeBlock")) Destroy(gameObject);
     }
 }
