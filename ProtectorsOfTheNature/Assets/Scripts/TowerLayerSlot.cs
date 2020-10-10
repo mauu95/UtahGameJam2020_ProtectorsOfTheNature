@@ -21,7 +21,8 @@ public class TowerLayerSlot : MonoBehaviour
                 return;
 
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (hit.collider != null && hit.collider.gameObject.GetComponent<TowerLayerSlot>() != null)
+
+            if (hit.collider != null && hit.collider.gameObject.GetComponent<TowerLayerSlot>() != null && hit.collider.gameObject == gameObject)
             {
                 Instantiate(weapons[0].gameObject, transform);
                 GetComponent<SpriteRenderer>().enabled = false;
