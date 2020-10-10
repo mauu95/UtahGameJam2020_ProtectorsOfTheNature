@@ -8,7 +8,7 @@ public class Tower : MonoBehaviour
     public GameObject towerLayerPrefab;
     public TowerLayer layerOnTop;
 
-    private int maxLayer;
+    private int maxLayer = 4;
     private int _actualLayer = 1;
 
 
