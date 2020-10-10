@@ -11,7 +11,7 @@ using Random = UnityEngine.Random;
 public class LevelManager : Singleton<LevelManager>
 {
     [Header("Fields")] [SerializeField] private Text moneyTextField;
-    [SerializeField] private string _moneyBaseText = "Money: ";
+    [SerializeField] private string _moneyBaseText;
     [SerializeField] private Transform[] _spawnPoints;
 
 
@@ -47,7 +47,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         for (int i = 0; i < _numberOfPlanes; i++)
         {
-            Transform spawnPoint = _spawnPoints[Random.Range(2, 3)];
+            Transform spawnPoint = _spawnPoints[Random.Range(2, 4)];
             Vector3 position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z);
 
             Instantiate(_planePrefab, position, Quaternion.identity);
@@ -59,7 +59,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         for (int i = 0; i < _numberOfKamikaze; i++)
         {
-            Transform spawnPoint = _spawnPoints[Random.Range(0, 1)];
+            Transform spawnPoint = _spawnPoints[Random.Range(0, 2)];
             Vector3 position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z);
 
             Instantiate(_kamikazePrefab, position, Quaternion.identity);

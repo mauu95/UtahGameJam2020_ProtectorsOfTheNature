@@ -420,8 +420,6 @@ MonoBehaviour:
   _spawnPoints:
   - {fileID: 1370630132}
   - {fileID: 326532905}
-  - {fileID: 2090272172}
-  - {fileID: 115333173}
   _kamikazePrefab: {fileID: 2134996462234004774, guid: 11b8691a32f1074469b35d2a5bef1074,
     type: 3}
   _planePrefab: {fileID: 0}
