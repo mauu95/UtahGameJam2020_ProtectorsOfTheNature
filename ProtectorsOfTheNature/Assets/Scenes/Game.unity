@@ -1120,6 +1120,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1723126226}
     m_Modifications:
+    - target: {fileID: 1681691567, guid: a43968fcd5de7d84ab038f6e76473c05, type: 3}
+      propertyPath: maxLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865003704493557667, guid: a43968fcd5de7d84ab038f6e76473c05,
+        type: 3}
+      propertyPath: m_Name
+      value: AddTurretButton
+      objectReference: {fileID: 0}
     - target: {fileID: 3342305508240829152, guid: a43968fcd5de7d84ab038f6e76473c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1128,7 +1137,7 @@ PrefabInstance:
     - target: {fileID: 3342305508240829152, guid: a43968fcd5de7d84ab038f6e76473c05,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8
+      value: -8.05
       objectReference: {fileID: 0}
     - target: {fileID: 3342305508240829152, guid: a43968fcd5de7d84ab038f6e76473c05,
         type: 3}

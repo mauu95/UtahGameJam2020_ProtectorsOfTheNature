@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LayerAdderButton : MonoBehaviour
 {
+    [Tooltip("Set the maximum height of the tower")][SerializeField] [Range(1, 6)] private int maxLayer;
+    
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
