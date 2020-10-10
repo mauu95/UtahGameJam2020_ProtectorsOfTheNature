@@ -10,7 +10,7 @@ public class Sparamele : Weapon
 
     private void Start()
     {
-        InvokeRepeating("Fire", 1.0f, shootingFrequency);
+        InvokeRepeating(nameof(Fire), 1.0f, shootingFrequency);
     }
 
     private void Fire()
@@ -24,7 +24,6 @@ public class Sparamele : Weapon
         Bullet_Apple bullet = gm.GetComponent<Bullet_Apple>();
 
 
-        
         bullet.SetTarget(enemy.gameObject.transform.position);
     }
 }

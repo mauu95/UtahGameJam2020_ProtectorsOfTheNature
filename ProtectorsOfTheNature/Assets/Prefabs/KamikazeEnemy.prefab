@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3012441730403322771}
   m_Layer: 0
   m_Name: KamikazeEnemy
-  m_TagString: Enemy
+  m_TagString: KamikazeEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3dae7ca109c6f4a9cde02a0e3e3d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 2
 --- !u!61 &1654016973853591105
 BoxCollider2D:
   m_ObjectHideFlags: 0
