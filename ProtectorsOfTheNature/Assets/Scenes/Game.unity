@@ -1456,7 +1456,6 @@ MonoBehaviour:
   towerLayerPrefab: {fileID: 3342305508240829158, guid: a43968fcd5de7d84ab038f6e76473c05,
     type: 3}
   layerOnTop: {fileID: 30767486}
-  maxLayer: 3
 --- !u!4 &1723126226
 Transform:
   m_ObjectHideFlags: 0
@@ -1529,6 +1528,11 @@ PrefabInstance:
     - target: {fileID: 1108245325459770, guid: a3ccfa4c81086344fb6b0b2c6e0d76de, type: 3}
       propertyPath: m_Name
       value: TreeHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 114337619513656060, guid: a3ccfa4c81086344fb6b0b2c6e0d76de,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114595394798795214, guid: a3ccfa4c81086344fb6b0b2c6e0d76de,
         type: 3}
