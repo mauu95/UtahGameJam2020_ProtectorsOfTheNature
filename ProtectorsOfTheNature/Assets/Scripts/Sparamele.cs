@@ -7,6 +7,7 @@ public class Sparamele : Weapon
     public GameObject bulletPrefab;
     public Enemy target;
     public float shootingFrequency = 1.0f;
+    public int level = 1;
 
     private void Start()
     {

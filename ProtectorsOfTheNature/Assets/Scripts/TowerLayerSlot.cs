@@ -7,6 +7,7 @@ public class TowerLayerSlot : MonoBehaviour
     private Weapon[] weapons;
 
     private bool isEquipped = false;
+    private Weapon Equipped;
 
     private void Start()
     {
@@ -17,14 +18,30 @@ public class TowerLayerSlot : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (isEquipped)
-                return;
-
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
             if (hit.collider != null && hit.collider.gameObject.GetComponent<TowerLayerSlot>() != null && hit.collider.gameObject == gameObject)
             {
-                Instantiate(weapons[0].gameObject, transform);
+                if(Equipped == null)
+                {
+                    Equipped = Instantiate(weapons[0].gameObject, transform).GetComponent<Weapon>();
+                    GetComponent<SpriteRenderer>().enabled = false;
+                    return;
+                }
+                    
+
+                Sparamele sparamele = Equipped.GetComponent<Sparamele>();
+                if (sparamele.level == 1)
+                {
+                    Destroy(Equipped.gameObject);
+                    Equipped = Instantiate(weapons[1].gameObject, transform).GetComponent<Weapon>();
+                }
+                else if (sparamele.level == 2)
+                {
+                    Destroy(Equipped.gameObject);
+                    Equipped = Instantiate(weapons[2].gameObject, transform).GetComponent<Weapon>();
+                }
+
                 GetComponent<SpriteRenderer>().enabled = false;
             }
         }

@@ -129,3 +129,4 @@ MonoBehaviour:
     type: 3}
   target: {fileID: 0}
   shootingFrequency: 1
+  level: 1
