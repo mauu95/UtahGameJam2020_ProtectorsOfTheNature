@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7079979752479447655}
   - component: {fileID: 580436288376890264}
   m_Layer: 0
-  m_Name: SparaMele
+  m_Name: W_AppleShooterRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
     type: 3}
   target: {fileID: 0}
   shootingFrequency: 1
+  level: 3
 --- !u!1 &8428950491738793162
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +119,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b547349a99e5a744e92f9819bf833d8d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2da965928eb585498348020b8dc181b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
