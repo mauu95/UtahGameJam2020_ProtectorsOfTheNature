@@ -2,12 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] [Range(2.0f, 10.0f)] private float _speed;
 
     private Vector3 _initialPosition;
+    private Text playerMoneyText;
+
 
     // Caching! Use this variable instead of the traditional one.
     private Transform _transform;
@@ -31,6 +34,9 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("TreeBlock")) Destroy(gameObject);
+        if (other.CompareTag("TreeBlock"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
