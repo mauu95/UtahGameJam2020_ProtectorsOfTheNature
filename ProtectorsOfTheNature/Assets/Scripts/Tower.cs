@@ -8,9 +8,18 @@ public class Tower : MonoBehaviour
     public GameObject towerLayerPrefab;
     public TowerLayer layerOnTop;
 
-    public void addLayer()
+    [SerializeField] [Range(1, 6)] private int maxLayer;
+    private int _actualLayer = 1;
+
+
+    public void AddLayer()
     {
-        GameObject obj = Instantiate(towerLayerPrefab, layerOnTop.transform.position + Vector3.up * 2, Quaternion.identity, transform);
-        layerOnTop = obj.GetComponent<TowerLayer>();
+        if (_actualLayer < maxLayer)
+        {
+            GameObject obj = Instantiate(towerLayerPrefab, layerOnTop.transform.position + Vector3.up * 2,
+                Quaternion.identity, transform);
+            layerOnTop = obj.GetComponent<TowerLayer>();
+            _actualLayer++;
+        }
     }
 }

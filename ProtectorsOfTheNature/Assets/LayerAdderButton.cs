@@ -2,8 +2,6 @@
 
 public class LayerAdderButton : MonoBehaviour
 {
-    [Tooltip("Set the maximum height of the tower")][SerializeField] [Range(1, 6)] private int maxLayer;
-    
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -12,7 +10,7 @@ public class LayerAdderButton : MonoBehaviour
 
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                FindObjectOfType<Tower>().addLayer();
+                FindObjectOfType<Tower>().AddLayer();
                 Destroy(gameObject);
             }
         }

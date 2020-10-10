@@ -52,18 +52,9 @@ public class LevelManager : Singleton<LevelManager>
 
             GameObject enemyGameObject = Instantiate(_planePrefab, position, Quaternion.identity);
         }
-        
-        
-        yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
-    }
 
-    private IEnumerator AutoUpdateMoney()
-    {
-        while (true)
-        {
-            UpdatePlayerMoney(3);
-            yield return new WaitForSeconds(1);
-        }
+
+        yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
     }
 
     private IEnumerator GenerateKamikaze()
@@ -76,6 +67,15 @@ public class LevelManager : Singleton<LevelManager>
             GameObject enemyGameObject = Instantiate(_kamikazePrefab, position, Quaternion.identity);
 
             yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
+        }
+    }
+
+    private IEnumerator AutoUpdateMoney()
+    {
+        while (true)
+        {
+            UpdatePlayerMoney(3);
+            yield return new WaitForSeconds(1);
         }
     }
 
