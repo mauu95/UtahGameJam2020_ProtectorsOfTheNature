@@ -47,11 +47,11 @@ public class LevelManager : Singleton<LevelManager>
     {
         for (int i = 0; i < _numberOfPlanes; i++)
         {
-            Transform spawnPoint = _spawnPoints[Random.Range(2, 4)];
+            Transform spawnPoint = _spawnPoints[Random.Range(2, _spawnPoints.Length)];
             Vector3 position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z);
 
-            Instantiate(_planePrefab, position, Quaternion.identity);
-            yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
+            Instantiate(_planePrefab, position, Quaternion.Euler(0, 0, 90));
+            yield return new WaitForSeconds(0.5f);
         }
     }
 

@@ -420,11 +420,14 @@ MonoBehaviour:
   _spawnPoints:
   - {fileID: 1370630132}
   - {fileID: 326532905}
+  - {fileID: 2090272172}
+  - {fileID: 115333173}
   _kamikazePrefab: {fileID: 2134996462234004774, guid: 11b8691a32f1074469b35d2a5bef1074,
     type: 3}
-  _planePrefab: {fileID: 0}
+  _planePrefab: {fileID: 8605783747198920047, guid: ef9bf7d16e651e245aa0fbe15355f0cd,
+    type: 3}
   _numberOfKamikaze: 20
-  _numberOfPlanes: 0
+  _numberOfPlanes: 3
   _initialMoney: 200
 --- !u!4 &346303752
 Transform:
