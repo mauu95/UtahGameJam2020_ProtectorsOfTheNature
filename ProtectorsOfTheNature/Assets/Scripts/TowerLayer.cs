@@ -19,9 +19,7 @@ public class TowerLayer : MonoBehaviour
     {
         if (other.CompareTag("KamikazeEnemy"))
         {
-            print("tree Triggered!");
             _healthBarScript.TakeDamage(20);
-
             if (_healthBarScript.health == 0)
             {
                 SceneManager.LoadScene("GameOver");
