@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 using Utility;
 using Random = UnityEngine.Random;
@@ -32,8 +33,20 @@ public class LevelManager : Singleton<LevelManager>
             StartCoroutine(GenerateKamikazeEnemy());
         }
 
+
+        StartCoroutine(AutoUpdateMoney());
+
         moneyTextField.text = _moneyBaseText + " " + _initialMoney;
         _actualMoney = _initialMoney;
+    }
+
+    private IEnumerator AutoUpdateMoney()
+    {
+        while (true)
+        {
+            UpdatePlayerMoney(3);
+            yield return new WaitForSeconds(1);
+        }
     }
 
     private IEnumerator GenerateKamikazeEnemy()
