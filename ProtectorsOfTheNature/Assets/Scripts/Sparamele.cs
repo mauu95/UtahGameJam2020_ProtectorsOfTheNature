@@ -15,7 +15,8 @@ public class Sparamele : Weapon
 
     private void Fire()
     {
-        Enemy enemy = FindObjectOfType<Enemy>();
+        EnemyController enemy = FindObjectOfType<EnemyController>();
+
 
         if (enemy == null)
             return;
