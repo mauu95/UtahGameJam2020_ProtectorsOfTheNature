@@ -251,6 +251,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &346121124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1108245325459770, guid: a3ccfa4c81086344fb6b0b2c6e0d76de,
+    type: 3}
+  m_PrefabInstance: {fileID: 1809720130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &346303750
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,11 +286,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32bf98985c076e94e9c0ccb2d5e11d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyTextField: {fileID: 1217128107}
+  _moneyBaseText: 'Money:'
   _spawnPoints:
   - {fileID: 1370630132}
   - {fileID: 326532905}
-  moneyTextField: {fileID: 1217128107}
-  _moneyBaseText: 'Money:'
   _enemyPrefab: {fileID: 2134996462234004774, guid: 11b8691a32f1074469b35d2a5bef1074,
     type: 3}
   _numberOfKamikaze: 20
@@ -782,7 +788,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1108245325459770, guid: a3ccfa4c81086344fb6b0b2c6e0d76de, type: 3}
       propertyPath: m_Name
-      value: TreeHealth
+      value: TreeHealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 114595394798795214, guid: a3ccfa4c81086344fb6b0b2c6e0d76de,
         type: 3}
@@ -1174,5 +1180,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerLayer
       objectReference: {fileID: 0}
+    - target: {fileID: 5931336772775148121, guid: a43968fcd5de7d84ab038f6e76473c05,
+        type: 3}
+      propertyPath: _healthBarGameObject
+      value: 
+      objectReference: {fileID: 346121124}
+    - target: {fileID: 5931336772775148121, guid: a43968fcd5de7d84ab038f6e76473c05,
+        type: 3}
+      propertyPath: _healthBar
+      value: 
+      objectReference: {fileID: 346121124}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a43968fcd5de7d84ab038f6e76473c05, type: 3}
