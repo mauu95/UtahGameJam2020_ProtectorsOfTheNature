@@ -5,8 +5,6 @@ using UnityEngine;
 public class TowerLayerSlot : MonoBehaviour
 {
     private Weapon[] weapons;
-
-    private bool isEquipped = false;
     private Weapon Equipped;
 
     private void Start()
