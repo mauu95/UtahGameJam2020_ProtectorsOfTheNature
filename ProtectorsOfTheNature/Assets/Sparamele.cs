@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sparamele : MonoBehaviour
+public class Sparamele : Weapon
 {
     public GameObject bulletPrefab;
     public Enemy target;
@@ -15,8 +15,8 @@ public class Sparamele : MonoBehaviour
 
     private void Fire()
     {
-        Bullet_Apple bullet = Instantiate(bulletPrefab).GetComponent<Bullet_Apple>();
-        //print(target.transform.position == null);
-        bullet.SetTarget(target.transform.position);
+        GameObject gm = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        Bullet_Apple bullet = gm.GetComponent<Bullet_Apple>();
+        bullet.SetTarget(Vector3.zero);
     }
 }
