@@ -17,6 +17,9 @@ public class Sparamele : Weapon
     {
         GameObject gm = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         Bullet_Apple bullet = gm.GetComponent<Bullet_Apple>();
-        bullet.SetTarget(Vector3.zero);
+
+
+        Enemy enemy = FindObjectOfType<Enemy>();
+        bullet.SetTarget(enemy.gameObject.transform.position);
     }
 }
