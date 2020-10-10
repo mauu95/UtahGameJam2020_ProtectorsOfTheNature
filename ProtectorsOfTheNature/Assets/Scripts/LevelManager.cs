@@ -10,9 +10,9 @@ using Random = UnityEngine.Random;
 
 public class LevelManager : Singleton<LevelManager>
 {
-    [SerializeField] private Transform[] _spawnPoints;
-    [SerializeField] private Text moneyTextField;
+    [Header("Fields")] [SerializeField] private Text moneyTextField;
     [SerializeField] private string _moneyBaseText = "Money: ";
+    [SerializeField] private Transform[] _spawnPoints;
 
 
     [Header("Enemy Prefabs")] [SerializeField]
@@ -25,6 +25,7 @@ public class LevelManager : Singleton<LevelManager>
     private int _initialMoney;
 
     private int _actualMoney;
+
 
     private void Start()
     {

@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] [Range(2.0f, 10.0f)] private float _speed;
 
+
     private Vector3 _initialPosition;
     private Text playerMoneyText;
 
@@ -16,15 +17,16 @@ public class EnemyController : MonoBehaviour
     private Transform _transform;
 
 
+    private void Awake()
+    {
+        _transform = GetComponent<Transform>();
+    }
+    
     private void Start()
     {
         _initialPosition = transform.position;
     }
 
-    private void Awake()
-    {
-        _transform = GetComponent<Transform>();
-    }
 
     private void FixedUpdate()
     {

@@ -89,7 +89,7 @@ public class Healthbar : MonoBehaviour {
     // Set the health bar to display the same health value as the health variable:
     public void UpdateHealth()
     {
-        // Change the health bar color acording to how much health the player has:
+        // Change the health bar color according to how much health the player has:
         if (healthPercentage <= lowHealth && health >= minimumHealth && transform.Find("Bar").GetComponent<Image>().color != lowHealthColor)
         {
             ChangeHealthbarColor(lowHealthColor);
