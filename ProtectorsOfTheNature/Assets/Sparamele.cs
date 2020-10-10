@@ -15,11 +15,16 @@ public class Sparamele : Weapon
 
     private void Fire()
     {
+        Enemy enemy = FindObjectOfType<Enemy>();
+
+        if (enemy == null)
+            return;
+
         GameObject gm = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         Bullet_Apple bullet = gm.GetComponent<Bullet_Apple>();
 
 
-        Enemy enemy = FindObjectOfType<Enemy>();
+        
         bullet.SetTarget(enemy.gameObject.transform.position);
     }
 }
