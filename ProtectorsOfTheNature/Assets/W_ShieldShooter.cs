@@ -6,19 +6,17 @@ public class W_ShieldShooter : Weapon
 {
     public GameObject bulletPrefab;
     public float force = 1f;
+    public float shootingFrequency = 10f;
 
-    private void Update()
+    private void Start()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        InvokeRepeating("shoot", 0f, 10f);
+    }
 
-            if (hit.collider != null && hit.collider.gameObject == gameObject)
-            {
-                GameObject gm = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-                Rigidbody2D rb = gm.GetComponent<Rigidbody2D>();
-                rb.AddForce(Vector2.right * force);
-            }
-        }
+    public void shoot()
+    {
+        GameObject gm = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        Rigidbody2D rb = gm.GetComponent<Rigidbody2D>();
+        rb.AddForce(Vector2.right * force);
     }
 }
