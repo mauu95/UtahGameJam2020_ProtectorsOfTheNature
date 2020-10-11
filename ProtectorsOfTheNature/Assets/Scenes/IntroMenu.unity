@@ -625,7 +625,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '> PLAY <'
+  m_text: '{PLAY}'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5ec305dd8ebef974db96e4c4ec195bb1, type: 2}
   m_sharedMaterial: {fileID: 6801028540357644485, guid: 5ec305dd8ebef974db96e4c4ec195bb1,
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '> QUIT <'
+  m_text: '{QUIT}'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5ec305dd8ebef974db96e4c4ec195bb1, type: 2}
   m_sharedMaterial: {fileID: 6801028540357644485, guid: 5ec305dd8ebef974db96e4c4ec195bb1,

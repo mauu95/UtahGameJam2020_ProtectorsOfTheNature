@@ -9,6 +9,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    private void Start()
+    {
+        AudioManager.Instance.PlaySoundtrack();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

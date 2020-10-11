@@ -23,6 +23,7 @@ public class Sparamele : Weapon
             return;
 
         GameObject gm = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        AudioManager.Instance.PlayBulletSound();
         Bullet_Apple bullet = gm.GetComponent<Bullet_Apple>();
 
 

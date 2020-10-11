@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class EnemyController : MonoBehaviour
 {
@@ -15,16 +15,25 @@ public class EnemyController : MonoBehaviour
 
     // Caching! Use this variable instead of the traditional one.
     private Transform _transform;
+    private Healthbar _healthBarScript;
 
 
     private void Awake()
     {
         _transform = GetComponent<Transform>();
+        _healthBarScript = FindObjectOfType<Healthbar>();
     }
 
     private void Start()
     {
         _initialPosition = transform.position;
+        StartCoroutine(PlayKamikazeScream());
+    }
+
+    private IEnumerator PlayKamikazeScream()
+    {
+        AudioManager.Instance.PlayKamikazeVoice();
+        yield return new WaitForSeconds(Random.Range(1.0f, 2.0f));
     }
 
 
@@ -38,8 +47,16 @@ public class EnemyController : MonoBehaviour
     {
         if (other.CompareTag("TreeBlock"))
         {
-            Destroy(gameObject);
+            AudioManager.Instance.PlayKamikazeDeath();
             LevelManager.Instance.UpdatePlayerMoney(50);
+
+            _healthBarScript.TakeDamage(toTowerDamage);
+            if (_healthBarScript.health == 0)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+
+            Destroy(gameObject);
         }
     }
 }

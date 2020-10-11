@@ -1,22 +1,26 @@
 ﻿using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlaneController : MonoBehaviour
 {
     [SerializeField] [Range(5.0f, 10.0f)] private float _speed;
     [Range(1.0f, 30.0f)] public float toTowerDamage;
-    
-    
+
+
     private Transform _transform;
     private SpriteRenderer _spriteRenderer;
 
     private Vector3 _initialPosition;
     private GameObject _topLayer;
+    private Healthbar _healthBarScript;
+
     private void Awake()
     {
         _transform = GetComponent<Transform>();
         _topLayer = FindObjectOfType<Tower>().layerOnTop.gameObject;
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _healthBarScript = FindObjectOfType<Healthbar>();
     }
 
     private void Start()
@@ -42,9 +46,16 @@ public class PlaneController : MonoBehaviour
     {
         if (other.CompareTag("TreeBlock"))
         {
-            Destroy(gameObject);
-            
+            AudioManager.Instance.PlayExplosion();
             LevelManager.Instance.UpdatePlayerMoney(45);
+
+            _healthBarScript.TakeDamage(toTowerDamage);
+            if (_healthBarScript.health == 0)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+
+            Destroy(gameObject);
         }
     }
 }
