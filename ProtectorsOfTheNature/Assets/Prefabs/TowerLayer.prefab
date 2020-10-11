@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974932803483374686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5069323783303348833}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 8006590878872299598}
   - component: {fileID: 2504820598568852873}
   m_Layer: 0
-  m_Name: AddButton
+  m_Name: AddTurretButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -252,7 +252,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5981617
+  m_Radius: 0.75099456
 --- !u!1 &3342305508240829158
 GameObject:
   m_ObjectHideFlags: 0

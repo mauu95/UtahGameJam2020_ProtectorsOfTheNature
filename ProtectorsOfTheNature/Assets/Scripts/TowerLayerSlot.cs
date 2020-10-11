@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class TowerLayerSlot : MonoBehaviour
 {
@@ -20,28 +22,43 @@ public class TowerLayerSlot : MonoBehaviour
 
             if (hit.collider != null && hit.collider.gameObject.GetComponent<TowerLayerSlot>() != null && hit.collider.gameObject == gameObject)
             {
-                if(Equipped == null)
-                {
-                    Equipped = Instantiate(weapons[0].gameObject, transform).GetComponent<Weapon>();
-                    GetComponent<SpriteRenderer>().enabled = false;
-                    return;
-                }
-                    
-
-                Sparamele sparamele = Equipped.GetComponent<Sparamele>();
-                if (sparamele.level == 1)
-                {
-                    Destroy(Equipped.gameObject);
-                    Equipped = Instantiate(weapons[1].gameObject, transform).GetComponent<Weapon>();
-                }
-                else if (sparamele.level == 2)
-                {
-                    Destroy(Equipped.gameObject);
-                    Equipped = Instantiate(weapons[2].gameObject, transform).GetComponent<Weapon>();
-                }
-
-                GetComponent<SpriteRenderer>().enabled = false;
+                PurchaseMenu menu = Resources.FindObjectsOfTypeAll<PurchaseMenu>()[0];
+                menu.SetSlot(this);
+                menu.gameObject.transform.position = Input.mousePosition;
+                menu.gameObject.SetActive(true);
             }
         }
+    }
+
+    public void EquipAppleShooter()
+    {
+        int sparameleLevel;
+
+        if (Equipped == null)
+            sparameleLevel = 0;
+        else
+        {
+            Sparamele prevSparamele = Equipped.GetComponent<Sparamele>();
+            if (prevSparamele == null)
+                sparameleLevel = 0;
+            else
+                sparameleLevel = prevSparamele.level;
+        }
+
+        if(Equipped)
+            Destroy(Equipped.gameObject);
+
+        Equipped = Instantiate(weapons[sparameleLevel + 1].gameObject, transform).GetComponent<Weapon>();
+
+        GetComponent<SpriteRenderer>().enabled = false;
+
+    }
+
+    public void EquipShieldShooter()
+    {
+        if (Equipped)
+            Destroy(Equipped.gameObject);
+
+        Equipped = Instantiate(weapons[3].gameObject, transform).GetComponent<Weapon>();
     }
 }
