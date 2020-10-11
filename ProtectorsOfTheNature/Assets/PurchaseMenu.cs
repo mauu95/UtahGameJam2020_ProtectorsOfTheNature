@@ -41,7 +41,13 @@ public class PurchaseMenu : MonoBehaviour
     {
         int currentMoney = inventory.currentMoney;
         int cost = Array.Find(prices.prices, price => price.name == "shieldShooter").cost;
-        currentSlot.EquipShieldShooter();
+
+        if(currentMoney >= cost)
+        {
+            inventory.UpdatePlayerMoney(-cost);
+            currentSlot.EquipShieldShooter();
+        }
+
     }
 
     public void SetSlot(TowerLayerSlot slot)

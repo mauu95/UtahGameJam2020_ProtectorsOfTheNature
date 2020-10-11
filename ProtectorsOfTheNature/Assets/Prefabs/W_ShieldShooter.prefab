@@ -127,3 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5073169084118629574, guid: 15b094a05e8b85247964c18f4f00b616,
     type: 3}
+  force: 500
