@@ -11,6 +11,7 @@ public class Shield : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<EnemyController>())
         {
+            AudioManager.Instance.PlayKamikazeDeath();
             Destroy(collision.gameObject);
             health--;
         }

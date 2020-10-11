@@ -14,6 +14,10 @@ public class GameOverMenuScript : MonoBehaviour
     {
         Application.Quit();
     }
-    
+
+    public void ToGameMenu()
+    {
+        SceneManager.LoadScene("IntroMenu");
+    }
     
 }
