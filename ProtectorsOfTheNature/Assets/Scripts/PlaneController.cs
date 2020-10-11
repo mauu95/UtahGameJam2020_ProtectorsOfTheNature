@@ -6,12 +6,10 @@ public class PlaneController : MonoBehaviour
     [SerializeField] [Range(5.0f, 10.0f)] private float _speed;
 
     private Transform _transform;
+    private SpriteRenderer _spriteRenderer;
 
     private Vector3 _initialPosition;
     private GameObject _topLayer;
-
-    private SpriteRenderer _spriteRenderer;
-
     private void Awake()
     {
         _transform = GetComponent<Transform>();

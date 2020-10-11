@@ -427,8 +427,8 @@ MonoBehaviour:
     type: 3}
   _planePrefab: {fileID: 1201322051833049257, guid: c6d4453b278682e418993ba1832be560,
     type: 3}
-  _numberOfKamikaze: 12
-  _numberOfPlanes: 9
+  _numberOfKamikaze: 20
+  _numberOfPlanes: 5
 --- !u!4 &346303752
 Transform:
   m_ObjectHideFlags: 0
@@ -2618,8 +2618,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1586940165
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ecb09bcafb9db624db937c9cdf314365, type: 3}
   m_Color: {r: 0.6509434, g: 0.40648413, b: 0.1043966, a: 1}
@@ -2872,6 +2872,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TowerLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342305508240829159, guid: a43968fcd5de7d84ab038f6e76473c05,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1586940165
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342305508240829159, guid: a43968fcd5de7d84ab038f6e76473c05,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342305508240829159, guid: a43968fcd5de7d84ab038f6e76473c05,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4284495746968630324, guid: a43968fcd5de7d84ab038f6e76473c05,
         type: 3}
