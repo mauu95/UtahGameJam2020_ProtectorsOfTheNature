@@ -8,7 +8,11 @@ public class GameManager : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
-    
+
+    private void Start()
+    {
+        AudioManager.Instance.PlaySoundtrack();
+    }
 
     private void Update()
     {
