@@ -28,16 +28,29 @@ public class LevelManager : Singleton<LevelManager>
     public float mobsSpawnSpeed = 0;
     public float maxWait = 2f;
 
-
+    private float x;
 
     private void Start()
     {
         StartCoroutine(GenerateKamikaze());
         StartCoroutine(GeneratePlanes());
         StartCoroutine(AutoUpdateMoney());
+        StartCoroutine(AutoUpdateMobsSpawnSpeed());
 
         moneyTextField.text = _moneyBaseText + " " + _initialMoney;
         currentMoney = _initialMoney;
+        x = 0;
+        
+    }
+
+    private IEnumerator AutoUpdateMobsSpawnSpeed()
+    {
+        while(mobsSpawnSpeed < 1f)
+        {
+            x += 0.1f;
+            mobsSpawnSpeed = x * x;
+            yield return new WaitForSeconds(3f);
+        }
     }
 
     private IEnumerator GenerateKamikaze()
@@ -46,7 +59,7 @@ public class LevelManager : Singleton<LevelManager>
         {
             Transform spawnPoint = _spawnPoints[Random.Range(0, 2)];
             Instantiate(_kamikazePrefab, spawnPoint.position, Quaternion.identity);
-            yield return new WaitForSeconds(maxWait - (mobsSpawnSpeed * maxWait) + 0.01f);
+            yield return new WaitForSeconds(maxWait - (mobsSpawnSpeed * maxWait) + 0.1f);
         }
     }
 
@@ -57,7 +70,6 @@ public class LevelManager : Singleton<LevelManager>
             Transform spawnPoint = _spawnPoints[Random.Range(2, _spawnPoints.Length)];
             Instantiate(_planePrefab, spawnPoint.position, Quaternion.identity);
             yield return new WaitForSeconds(maxWait - (mobsSpawnSpeed * maxWait) + 0.5f);
-            // yield return new WaitForSeconds(Random.Range(0.5f, 2.0f) * (100-mobsSpawnSpeed) / 100f);
         }
     }
 
