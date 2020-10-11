@@ -411,7 +411,6 @@ MonoBehaviour:
     type: 3}
   _numberOfKamikaze: 20
   _numberOfPlanes: 5
-  _numberOfConspTheo: 0
 --- !u!4 &346303752
 Transform:
   m_ObjectHideFlags: 0

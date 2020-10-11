@@ -24,24 +24,22 @@ public class LevelManager : Singleton<LevelManager>
     private int _numberOfKamikaze;
 
     [SerializeField] [Range(0.0f, 20.0f)] private int _numberOfPlanes;
-    [SerializeField] [Range(0.0f, 20.0f)] private int _numberOfConspTheo;
 
     private int _initialMoney = 10000;
-    private int _currentLevel;
 
-    public int CurrentMoney { get; private set; }
+    public int currentMoney { get; set; }
 
 
     private void Start()
     {
         if (_numberOfKamikaze > 0) StartCoroutine(GenerateKamikaze());
         if (_numberOfPlanes > 0) StartCoroutine(GeneratePlanes());
-        if (_numberOfConspTheo > 0) StartCoroutine(GenerateConspiracyTheorists());
+
 
         StartCoroutine(AutoUpdateMoney());
 
         moneyTextField.text = _moneyBaseText + " " + _initialMoney;
-        CurrentMoney = _initialMoney;
+        currentMoney = _initialMoney;
     }
 
     private IEnumerator GeneratePlanes()
@@ -68,18 +66,6 @@ public class LevelManager : Singleton<LevelManager>
         }
     }
 
-    private IEnumerator GenerateConspiracyTheorists()
-    {
-        for (int i = 0; i < _numberOfConspTheo; i++)
-        {
-            Transform spawnPoint = _spawnPoints[Random.Range(0, 2)];
-            Vector3 position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z);
-
-            Instantiate(_kamikazePrefab, position, Quaternion.identity);
-            yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
-        }
-    }
-
     private IEnumerator AutoUpdateMoney()
     {
         while (true)
@@ -91,7 +77,7 @@ public class LevelManager : Singleton<LevelManager>
 
     public void UpdatePlayerMoney(int value)
     {
-        CurrentMoney += value;
-        moneyTextField.text = _moneyBaseText + " " + CurrentMoney;
+        currentMoney += value;
+        moneyTextField.text = _moneyBaseText + " " + currentMoney;
     }
 }
