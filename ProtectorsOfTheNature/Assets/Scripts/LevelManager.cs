@@ -34,7 +34,7 @@ public class LevelManager : Singleton<LevelManager>
     private void Start()
     {
         if (_numberOfKamikaze > 0) StartCoroutine(GenerateKamikaze());
-        //if (_numberOfPlanes > 0) StartCoroutine(GeneratePlanes());
+        if (_numberOfPlanes > 0) StartCoroutine(GeneratePlanes());
 
 
         StartCoroutine(AutoUpdateMoney());
