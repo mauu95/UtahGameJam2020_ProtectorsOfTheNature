@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
             {
@@ -40,4 +40,7 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+    
+    // TODO : restart function
+    
 }

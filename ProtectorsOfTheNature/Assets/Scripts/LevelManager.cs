@@ -50,7 +50,7 @@ public class LevelManager : Singleton<LevelManager>
             Transform spawnPoint = _spawnPoints[Random.Range(2, _spawnPoints.Length)];
             Vector3 position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z);
 
-            Instantiate(_planePrefab, position, Quaternion.Euler(0, 0, 90));
+            Instantiate(_planePrefab, position, Quaternion.identity);
             yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
         }
     }

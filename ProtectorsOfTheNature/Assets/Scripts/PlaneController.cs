@@ -1,22 +1,20 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlaneController : MonoBehaviour
 {
     [SerializeField] [Range(5.0f, 10.0f)] private float _speed;
-    private GameObject _towerLayerOnTop;
 
     private Transform _transform;
+
     private Vector3 _initialPosition;
-    private Tower _tower;
+    private GameObject _topLayer;
 
 
     private void Awake()
     {
-        _tower = _towerLayerOnTop.GetComponent<Tower>();
         _transform = GetComponent<Transform>();
+        _topLayer = FindObjectOfType<Tower>().layerOnTop.gameObject;
     }
 
     private void Start()
@@ -26,8 +24,21 @@ public class PlaneController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 toTarget = _towerLayerOnTop.gameObject.transform.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(_topLayer.transform.position - _transform.position,
+            _transform.TransformDirection(Vector3.up));
+        _transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
 
-        transform.LookAt(toTarget);
+
+        float step = _speed * Time.fixedDeltaTime;
+        _transform.position = Vector3.MoveTowards(_transform.position, _topLayer.transform.position, step);
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("TreeBlock"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
