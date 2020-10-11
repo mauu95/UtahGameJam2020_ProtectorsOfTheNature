@@ -425,9 +425,10 @@ MonoBehaviour:
   - {fileID: 115333173}
   _kamikazePrefab: {fileID: 2134996462234004774, guid: 11b8691a32f1074469b35d2a5bef1074,
     type: 3}
-  _planePrefab: {fileID: '', guid: '', type: 3}
+  _planePrefab: {fileID: 1201322051833049257, guid: c6d4453b278682e418993ba1832be560,
+    type: 3}
   _numberOfKamikaze: 12
-  _numberOfPlanes: 6
+  _numberOfPlanes: 9
   _initialMoney: 200
 --- !u!4 &346303752
 Transform:

@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlaneController : MonoBehaviour
 {
@@ -24,13 +23,10 @@ public class PlaneController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Quaternion rotation = Quaternion.LookRotation(_topLayer.transform.position - _transform.position,
-            _transform.TransformDirection(Vector3.up));
-        _transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
-
+        _transform.right = _transform.position - _topLayer.transform.position;
 
         float step = _speed * Time.fixedDeltaTime;
-        _transform.position = Vector3.MoveTowards(_transform.position, _topLayer.transform.position, step);
+        _transform.position = Vector2.MoveTowards(_transform.position, _topLayer.transform.position, step);
     }
 
 
