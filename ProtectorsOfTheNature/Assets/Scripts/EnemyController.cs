@@ -39,6 +39,7 @@ public class EnemyController : MonoBehaviour
         if (other.CompareTag("TreeBlock"))
         {
             Destroy(gameObject);
+            LevelManager.Instance.UpdatePlayerMoney(50);
         }
     }
 }

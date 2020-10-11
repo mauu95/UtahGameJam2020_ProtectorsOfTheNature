@@ -41,6 +41,7 @@ public class PlaneController : MonoBehaviour
         if (other.CompareTag("TreeBlock"))
         {
             Destroy(gameObject);
+            LevelManager.Instance.UpdatePlayerMoney(45);
         }
     }
 }
