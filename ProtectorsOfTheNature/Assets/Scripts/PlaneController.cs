@@ -4,7 +4,9 @@ using UnityEngine;
 public class PlaneController : MonoBehaviour
 {
     [SerializeField] [Range(5.0f, 10.0f)] private float _speed;
-
+    [Range(1.0f, 30.0f)] public float toTowerDamage;
+    
+    
     private Transform _transform;
     private SpriteRenderer _spriteRenderer;
 
@@ -41,6 +43,7 @@ public class PlaneController : MonoBehaviour
         if (other.CompareTag("TreeBlock"))
         {
             Destroy(gameObject);
+            
             LevelManager.Instance.UpdatePlayerMoney(45);
         }
     }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] [Range(2.0f, 10.0f)] private float _speed;
-
+    [Range(1.0f, 30.0f)] public float toTowerDamage;
 
     private Vector3 _initialPosition;
     private Text playerMoneyText;
@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     {
         _transform = GetComponent<Transform>();
     }
-    
+
     private void Start()
     {
         _initialPosition = transform.position;
