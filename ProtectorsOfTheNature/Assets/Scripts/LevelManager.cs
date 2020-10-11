@@ -28,6 +28,8 @@ public class LevelManager : Singleton<LevelManager>
     public float mobsSpawnSpeed = 0;
     public float maxWait = 2f;
 
+    public float timeToNextLevel = 3f;
+
     private float x;
 
     private void Start()
@@ -49,8 +51,12 @@ public class LevelManager : Singleton<LevelManager>
         {
             x += 0.1f;
             mobsSpawnSpeed = x * x;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(timeToNextLevel);
         }
+
+        yield return new WaitForSeconds(timeToNextLevel);
+
+        print("you win");
     }
 
     private IEnumerator GenerateKamikaze()
