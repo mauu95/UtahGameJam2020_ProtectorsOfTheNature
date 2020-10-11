@@ -21,7 +21,7 @@ public class Bullet_Apple : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("KamikazeEnemy"))
+        if (collision.gameObject.GetComponent<Enemy>())
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);

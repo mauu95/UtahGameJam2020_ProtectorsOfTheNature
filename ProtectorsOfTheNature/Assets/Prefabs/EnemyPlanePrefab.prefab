@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2210510114970139448}
   - component: {fileID: -3576688744102326869}
   - component: {fileID: 3498691777848426176}
+  - component: {fileID: -5820521981555968283}
   m_Layer: 0
   m_Name: EnemyPlanePrefab
   m_TagString: Untagged
@@ -211,3 +212,15 @@ PolygonCollider2D:
       - {x: 0.26, y: -2.4199998}
       - {x: 0.48999998, y: -2.1399999}
       - {x: 0.56, y: -1.9799999}
+--- !u!114 &-5820521981555968283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201322051833049257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b6342006f52a04784ee13957166ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

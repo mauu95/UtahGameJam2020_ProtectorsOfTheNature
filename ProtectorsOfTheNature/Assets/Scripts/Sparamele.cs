@@ -11,12 +11,12 @@ public class Sparamele : Weapon
 
     private void Start()
     {
-        InvokeRepeating(nameof(Fire), 1.0f, shootingFrequency);
+        InvokeRepeating(nameof(Fire), 0f, shootingFrequency);
     }
 
     private void Fire()
     {
-        EnemyController enemy = FindObjectOfType<EnemyController>();
+        Enemy enemy = FindObjectOfType<Enemy>();
 
 
         if (enemy == null)
