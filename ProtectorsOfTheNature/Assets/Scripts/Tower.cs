@@ -11,7 +11,7 @@ public class Tower : MonoBehaviour
     private int _actualLayer = 1;
 
 
-    public void AddLayer()
+    public bool AddLayer()
     {
         LevelManager inventory = LevelManager.Instance;
 
@@ -25,7 +25,10 @@ public class Tower : MonoBehaviour
                 Quaternion.identity, transform);
             layerOnTop = obj.GetComponent<TowerLayer>();
             _actualLayer++;
+            return true;
         }
+        else
+            return false;
     }
 
     public bool MaxTreeReached()

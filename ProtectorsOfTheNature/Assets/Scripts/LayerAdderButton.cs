@@ -16,8 +16,8 @@ public class LayerAdderButton : MonoBehaviour
 
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                FindObjectOfType<Tower>().AddLayer();
-                Destroy(gameObject);
+                if(FindObjectOfType<Tower>().AddLayer())
+                    Destroy(gameObject);
             }
         }
     }
