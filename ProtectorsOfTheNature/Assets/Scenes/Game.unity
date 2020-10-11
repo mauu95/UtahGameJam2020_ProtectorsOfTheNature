@@ -122,24 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &30767486 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5931336772775148121, guid: a43968fcd5de7d84ab038f6e76473c05,
-    type: 3}
-  m_PrefabInstance: {fileID: 3342305508979463580}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4491cd50a172fff4dbfeac766e487b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &30767488 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3342305508240829152, guid: a43968fcd5de7d84ab038f6e76473c05,
-    type: 3}
-  m_PrefabInstance: {fileID: 3342305508979463580}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &61830177
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,6 +977,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811994980}
   m_CullTransparentMesh: 0
+--- !u!4 &873201532 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3342305508240829152, guid: a43968fcd5de7d84ab038f6e76473c05,
+    type: 3}
+  m_PrefabInstance: {fileID: 3342305508979463580}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &962731619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,7 +2049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerLayerPrefab: {fileID: 3342305508240829158, guid: a43968fcd5de7d84ab038f6e76473c05,
     type: 3}
-  layerOnTop: {fileID: 30767486}
+  layerOnTop: {fileID: 8949240116236529605}
 --- !u!4 &1723126226
 Transform:
   m_ObjectHideFlags: 0
@@ -2073,7 +2061,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 30767488}
+  - {fileID: 873201532}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2984,3 +2972,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6c6ec9c23e5883419d645a94075f25a, type: 3}
+--- !u!114 &8949240116236529605 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5931336772775148121, guid: a43968fcd5de7d84ab038f6e76473c05,
+    type: 3}
+  m_PrefabInstance: {fileID: 3342305508979463580}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4491cd50a172fff4dbfeac766e487b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
