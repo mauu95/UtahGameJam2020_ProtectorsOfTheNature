@@ -410,7 +410,7 @@ MonoBehaviour:
   _planePrefab: {fileID: 1201322051833049257, guid: c6d4453b278682e418993ba1832be560,
     type: 3}
   mobsSpawnSpeed: 0
-  maxWait: 2
+  maxWait: 3
 --- !u!4 &346303752
 Transform:
   m_ObjectHideFlags: 0
