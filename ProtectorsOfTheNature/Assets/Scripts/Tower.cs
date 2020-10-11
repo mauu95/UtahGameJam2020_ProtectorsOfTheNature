@@ -14,12 +14,18 @@ public class Tower : MonoBehaviour
 
     public void AddLayer()
     {
-        if (_actualLayer < maxLayer)
+        LevelManager inventory = LevelManager.Instance;
+
+        int currentMoney = inventory.currentMoney;
+        int cost = FindObjectOfType<PriceList>().GetPrice("addLayer");
+
+        if (currentMoney >= cost && _actualLayer < maxLayer)
         {
-            GameObject obj = Instantiate(towerLayerPrefab, layerOnTop.transform.position + Vector3.up * 2,
-                Quaternion.identity, transform);
+            inventory.UpdatePlayerMoney(-cost);
+            GameObject obj = Instantiate(towerLayerPrefab, layerOnTop.transform.position + Vector3.up * 2, Quaternion.identity, transform);
             layerOnTop = obj.GetComponent<TowerLayer>();
             _actualLayer++;
         }
+        
     }
 }

@@ -2967,6 +2967,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4735308192153906583, guid: b6c6ec9c23e5883419d645a94075f25a,
+        type: 3}
+      propertyPath: prices.Array.data[4].name
+      value: addLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735308192153906583, guid: b6c6ec9c23e5883419d645a94075f25a,
+        type: 3}
+      propertyPath: prices.Array.data[4].cost
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 4735308192153906584, guid: b6c6ec9c23e5883419d645a94075f25a,
         type: 3}
       propertyPath: m_Name
