@@ -32,18 +32,7 @@ public class TowerLayerSlot : MonoBehaviour
 
     public void EquipAppleShooter()
     {
-        int sparameleLevel;
-
-        if (Equipped == null)
-            sparameleLevel = 0;
-        else
-        {
-            Sparamele prevSparamele = Equipped.GetComponent<Sparamele>();
-            if (prevSparamele == null)
-                sparameleLevel = 0;
-            else
-                sparameleLevel = prevSparamele.level;
-        }
+        int sparameleLevel = GetAppleShooterLevel();
 
         if(Equipped)
             Destroy(Equipped.gameObject);
@@ -59,6 +48,26 @@ public class TowerLayerSlot : MonoBehaviour
         if (Equipped)
             Destroy(Equipped.gameObject);
 
-        Equipped = Instantiate(weapons[3].gameObject, transform).GetComponent<Weapon>();
+        Equipped = Instantiate(weapons[0].gameObject, transform).GetComponent<Weapon>();
+
+        GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public int GetAppleShooterLevel()
+    {
+        int sparameleLevel;
+
+        if (Equipped == null)
+            sparameleLevel = 0;
+        else
+        {
+            Sparamele prevSparamele = Equipped.GetComponent<Sparamele>();
+            if (prevSparamele == null)
+                sparameleLevel = 0;
+            else
+                sparameleLevel = prevSparamele.level;
+        }
+
+        return sparameleLevel;
     }
 }

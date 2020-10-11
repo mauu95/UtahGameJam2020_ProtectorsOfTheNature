@@ -25,22 +25,21 @@ public class LevelManager : Singleton<LevelManager>
 
     [SerializeField] [Range(0.0f, 20.0f)] private int _numberOfPlanes;
 
-    [Header("Initial Game State")] [SerializeField] [Range(100, 250)]
-    private int _initialMoney;
+    private int _initialMoney = 10000;
 
-    private int _actualMoney;
+    public int currentMoney { get; set; }
 
 
     private void Start()
     {
         if (_numberOfKamikaze > 0) StartCoroutine(GenerateKamikaze());
-        if (_numberOfPlanes > 0) StartCoroutine(GeneratePlanes());
+        //if (_numberOfPlanes > 0) StartCoroutine(GeneratePlanes());
 
 
         StartCoroutine(AutoUpdateMoney());
 
         moneyTextField.text = _moneyBaseText + " " + _initialMoney;
-        _actualMoney = _initialMoney;
+        currentMoney = _initialMoney;
     }
 
     private IEnumerator GeneratePlanes()
@@ -78,7 +77,7 @@ public class LevelManager : Singleton<LevelManager>
 
     public void UpdatePlayerMoney(int value)
     {
-        _actualMoney += value;
-        moneyTextField.text = _moneyBaseText + " " + _actualMoney;
+        currentMoney += value;
+        moneyTextField.text = _moneyBaseText + " " + currentMoney;
     }
 }

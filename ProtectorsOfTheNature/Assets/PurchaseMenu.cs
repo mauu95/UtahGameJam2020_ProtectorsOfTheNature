@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -6,6 +7,14 @@ using UnityEngine.UIElements;
 public class PurchaseMenu : MonoBehaviour
 {
     private TowerLayerSlot currentSlot;
+    private PriceList prices;
+    private LevelManager inventory;
+
+    private void Start()
+    {
+        prices = FindObjectOfType<PriceList>();
+        inventory = LevelManager.Instance;
+    }
 
     private void Update()
     {
@@ -15,11 +24,23 @@ public class PurchaseMenu : MonoBehaviour
 
     public void BuyAppleShooter()
     {
-        currentSlot.EquipAppleShooter();
+        int level = currentSlot.GetAppleShooterLevel();
+        int currentMoney = inventory.currentMoney;
+        int cost = prices.prices[level].cost;
+
+        if (currentMoney >= cost)
+        {
+            inventory.UpdatePlayerMoney(-cost);
+            currentSlot.EquipAppleShooter();
+        }
+        else
+            print("Not enough money: needed: " + cost + " but owning:" + currentMoney);
     }
 
     public void BuyShieldShooter()
     {
+        int currentMoney = inventory.currentMoney;
+        int cost = Array.Find(prices.prices, price => price.name == "shieldShooter").cost;
         currentSlot.EquipShieldShooter();
     }
 
