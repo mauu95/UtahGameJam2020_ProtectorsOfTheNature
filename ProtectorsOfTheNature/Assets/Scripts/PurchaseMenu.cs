@@ -29,7 +29,7 @@ public class PurchaseMenu : MonoBehaviour
     public void BuyAppleShooter()
     {
         int level = currentSlot.GetAppleShooterLevel();
-        int currentMoney = inventory.currentMoney;
+        int currentMoney = inventory.CurrentMoney;
         int cost = prices.prices[level].cost;
 
         if (level == 3)
@@ -46,7 +46,7 @@ public class PurchaseMenu : MonoBehaviour
 
     public void BuyShieldShooter()
     {
-        int currentMoney = inventory.currentMoney;
+        int currentMoney = inventory.CurrentMoney;
         int cost = Array.Find(prices.prices, price => price.name == "shieldShooter").cost;
 
         if(currentMoney >= cost)

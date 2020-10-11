@@ -16,7 +16,7 @@ public class Tower : MonoBehaviour
     {
         LevelManager inventory = LevelManager.Instance;
 
-        int currentMoney = inventory.currentMoney;
+        int currentMoney = inventory.CurrentMoney;
         int cost = FindObjectOfType<PriceList>().GetPrice("addLayer");
 
         if (currentMoney >= cost && _actualLayer < maxLayer)
