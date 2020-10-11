@@ -18,23 +18,6 @@ public class Bullet_Apple : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * speed);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("KamikazeEnemy"))
-        {
-            LevelManager.Instance.UpdatePlayerMoney(10);
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
-
-        if (collision.CompareTag("EnemyPlane"))
-        {
-            LevelManager.Instance.UpdatePlayerMoney(20);
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
-    }
-
     public void SetTarget(Vector3 pos)
     {
         target = pos;

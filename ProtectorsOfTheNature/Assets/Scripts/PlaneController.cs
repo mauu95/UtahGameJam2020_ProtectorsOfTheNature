@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlaneController : MonoBehaviour
 {
     [SerializeField] [Range(5.0f, 10.0f)] private float _speed;
+    [SerializeField] [Range(1.0f, 100.0f)] private int _moneyDrop;
     [Range(1.0f, 30.0f)] public float toTowerDamage;
 
 
@@ -54,6 +55,13 @@ public class PlaneController : MonoBehaviour
                 SceneManager.LoadScene("GameOver");
             }
 
+            Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Bullet"))
+        {
+            LevelManager.Instance.UpdatePlayerMoney(_moneyDrop);
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }

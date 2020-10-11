@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] [Range(2.0f, 10.0f)] private float _speed;
     [Range(1.0f, 30.0f)] public float toTowerDamage;
+    [SerializeField] [Range(1.0f, 100.0f)] private int _moneyDrop;
 
     private Vector3 _initialPosition;
     private Text playerMoneyText;
@@ -55,6 +56,13 @@ public class EnemyController : MonoBehaviour
                 SceneManager.LoadScene("GameOver");
             }
 
+            Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Bullet"))
+        {
+            LevelManager.Instance.UpdatePlayerMoney(_moneyDrop);
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }

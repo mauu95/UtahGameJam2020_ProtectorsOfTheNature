@@ -9,6 +9,7 @@ TagManager:
   - KamikazeEnemy
   - Ground
   - EnemyPlane
+  - Bullet
   layers:
   - Default
   - TransparentFX

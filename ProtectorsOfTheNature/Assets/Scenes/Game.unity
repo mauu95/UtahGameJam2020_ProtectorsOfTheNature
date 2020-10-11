@@ -735,9 +735,9 @@ MonoBehaviour:
     type: 3}
   _planePrefab: {fileID: 1201322051833049257, guid: c6d4453b278682e418993ba1832be560,
     type: 3}
-  _initialMoney: 500
   mobsSpawnSpeed: 0
   maxWait: 3
+  timeToNextLevel: 3
 --- !u!4 &346303752
 Transform:
   m_ObjectHideFlags: 0
