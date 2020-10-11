@@ -20,51 +20,47 @@ public class LevelManager : Singleton<LevelManager>
 
     [SerializeField] private GameObject _planePrefab;
 
-    [Header("Enemy Number")] [SerializeField] [Range(0.0f, 20.0f)]
-    private int _numberOfKamikaze;
-
-    [SerializeField] [Range(0.0f, 20.0f)] private int _numberOfPlanes;
-
     private int _initialMoney = 10000;
 
     public int currentMoney { get; set; }
 
+    [Range(0f,1f)]
+    public float mobsSpawnSpeed = 0;
+    public float maxWait = 2f;
+
+
 
     private void Start()
     {
-        if (_numberOfKamikaze > 0) StartCoroutine(GenerateKamikaze());
-        if (_numberOfPlanes > 0) StartCoroutine(GeneratePlanes());
-
-
+        StartCoroutine(GenerateKamikaze());
+        StartCoroutine(GeneratePlanes());
         StartCoroutine(AutoUpdateMoney());
 
         moneyTextField.text = _moneyBaseText + " " + _initialMoney;
         currentMoney = _initialMoney;
     }
 
-    private IEnumerator GeneratePlanes()
-    {
-        for (int i = 0; i < _numberOfPlanes; i++)
-        {
-            Transform spawnPoint = _spawnPoints[Random.Range(2, _spawnPoints.Length)];
-            Vector3 position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z);
-
-            Instantiate(_planePrefab, position, Quaternion.identity);
-            yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
-        }
-    }
-
     private IEnumerator GenerateKamikaze()
     {
-        for (int i = 0; i < _numberOfKamikaze; i++)
+        while (true)
         {
             Transform spawnPoint = _spawnPoints[Random.Range(0, 2)];
-            Vector3 position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z);
-
-            Instantiate(_kamikazePrefab, position, Quaternion.identity);
-            yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
+            Instantiate(_kamikazePrefab, spawnPoint.position, Quaternion.identity);
+            yield return new WaitForSeconds(maxWait - (mobsSpawnSpeed * maxWait) + 0.01f);
         }
     }
+
+    private IEnumerator GeneratePlanes()
+    {
+        while(true)
+        {
+            Transform spawnPoint = _spawnPoints[Random.Range(2, _spawnPoints.Length)];
+            Instantiate(_planePrefab, spawnPoint.position, Quaternion.identity);
+            yield return new WaitForSeconds(maxWait - (mobsSpawnSpeed * maxWait) + 0.5f);
+            // yield return new WaitForSeconds(Random.Range(0.5f, 2.0f) * (100-mobsSpawnSpeed) / 100f);
+        }
+    }
+
 
     private IEnumerator AutoUpdateMoney()
     {
