@@ -8,6 +8,7 @@ TagManager:
   - TreeBlock
   - KamikazeEnemy
   - Ground
+  - EnemyPlane
   layers:
   - Default
   - TransparentFX

@@ -115,7 +115,7 @@ public class Healthbar : MonoBehaviour {
         UpdateHealth();
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         // Remove 'amount' hitpoints, then update the characters health:
         health -= float.Parse(amount.ToString());

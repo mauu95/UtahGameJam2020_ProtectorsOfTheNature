@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5820521981555968283}
   m_Layer: 0
   m_Name: EnemyPlanePrefab
-  m_TagString: Untagged
+  m_TagString: EnemyPlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  toTowerDamage: 1
 --- !u!60 &3498691777848426176
 PolygonCollider2D:
   m_ObjectHideFlags: 0
