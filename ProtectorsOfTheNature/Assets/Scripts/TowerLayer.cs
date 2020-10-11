@@ -1,12 +1,15 @@
-﻿using UnityEngine.SceneManagement;
+﻿using System;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class TowerLayer : MonoBehaviour
 {
-    [SerializeField] private GameObject _healthBar;
-    private Healthbar _healthBarScript;
+    /*[SerializeField] private GameObject _healthBar;
+    private Healthbar _healthBarScript;*/
 
-    private void OnTriggerEnter2D(Collider2D other)
+
+
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         _healthBarScript = FindObjectOfType<Healthbar>();
         if (other.CompareTag("KamikazeEnemy"))
@@ -28,5 +31,5 @@ public class TowerLayer : MonoBehaviour
                 //SceneManager.LoadScene("GameOver");
             }
         }
-    }
+    }*/
 }
