@@ -459,8 +459,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57.4, y: 0}
-  m_SizeDelta: {x: 150, y: 76.666664}
+  m_AnchoredPosition: {x: -75.9, y: 0}
+  m_SizeDelta: {x: 161.11157, y: 113.68896}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &350363289
 MonoBehaviour:
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 41a6e5f5557de06428dade8d5970a2aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b547349a99e5a744e92f9819bf833d8d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 624379698}
   - component: {fileID: 624379697}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: ShieldShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -619,8 +619,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 121.69519, y: -91.59204}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 136.5105, y: -116.40094}
+  m_SizeDelta: {x: 250, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624379697
 MonoBehaviour:
@@ -768,8 +768,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 544, y: 104}
-  m_SizeDelta: {x: 243.39038, y: 128.18408}
+  m_AnchoredPosition: {x: 529.18, y: 89.19}
+  m_SizeDelta: {x: 273.021, y: 157.80188}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &724857399
 MonoBehaviour:
@@ -783,6 +783,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a129183857923743bc77bf2d289e6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  appleShooterImg: {fileID: 350363287}
+  appleShoterDescription: {fileID: 811994982}
 --- !u!114 &724857400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,7 +805,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 200, y: 50}
+  m_CellSize: {x: 250, y: 70}
   m_Spacing: {x: 0, y: 5}
   m_Constraint: 2
   m_ConstraintCount: 2
@@ -856,7 +858,7 @@ GameObject:
   - component: {fileID: 811994983}
   - component: {fileID: 811994982}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,8 +880,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 30.1, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 37, y: 0}
+  m_SizeDelta: {x: -127.782104, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &811994982
 MonoBehaviour:
@@ -900,7 +902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 200
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -963,7 +965,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 40.14496, y: 0, z: 31.223877, w: 0}
+  m_margin: {x: 0.3287964, y: 0, z: -0.258667, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1129,7 +1131,7 @@ GameObject:
   - component: {fileID: 1033146971}
   - component: {fileID: 1033146970}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: AppleShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1153,8 +1155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 121.69519, y: -36.59204}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 136.5105, y: -41.40094}
+  m_SizeDelta: {x: 250, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1033146970
 MonoBehaviour:
@@ -2099,6 +2101,10 @@ MonoBehaviour:
   - {fileID: 932851250728601780, guid: d658c3ee8a86e3549be98bd9a4ac92ca, type: 3}
   - {fileID: 4922690126912799334, guid: 3f47c8678f49bb0488d0521c0e977db0, type: 3}
   - {fileID: 580436288376890264, guid: b92934829f1c4514c9640d00dcbf894f, type: 3}
+  appleshooterSprites:
+  - {fileID: 21300000, guid: b547349a99e5a744e92f9819bf833d8d, type: 3}
+  - {fileID: 21300000, guid: d555c64a862764e4d8a6ded8647e456d, type: 3}
+  - {fileID: 21300000, guid: e2da965928eb585498348020b8dc181b, type: 3}
 --- !u!4 &1730126916
 Transform:
   m_ObjectHideFlags: 0
@@ -2169,7 +2175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 700
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
