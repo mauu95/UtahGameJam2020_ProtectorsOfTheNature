@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Mathematics;
+using UnityEngine;
 
 public class PlaneController : MonoBehaviour
 {
@@ -9,16 +10,23 @@ public class PlaneController : MonoBehaviour
     private Vector3 _initialPosition;
     private GameObject _topLayer;
 
+    private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
         _transform = GetComponent<Transform>();
         _topLayer = FindObjectOfType<Tower>().layerOnTop.gameObject;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
         _initialPosition = _transform.position;
+
+        if (_initialPosition.x < 0)
+        {
+            _spriteRenderer.flipY = true;
+        }
     }
 
     private void FixedUpdate()

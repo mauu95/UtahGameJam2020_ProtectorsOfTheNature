@@ -429,7 +429,6 @@ MonoBehaviour:
     type: 3}
   _numberOfKamikaze: 12
   _numberOfPlanes: 9
-  _initialMoney: 200
 --- !u!4 &346303752
 Transform:
   m_ObjectHideFlags: 0
