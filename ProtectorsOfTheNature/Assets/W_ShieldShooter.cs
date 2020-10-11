@@ -17,6 +17,6 @@ public class W_ShieldShooter : Weapon
     {
         GameObject gm = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         Rigidbody2D rb = gm.GetComponent<Rigidbody2D>();
-        rb.AddForce(Vector2.right * force);
+        rb.AddForce(transform.right * force);
     }
 }

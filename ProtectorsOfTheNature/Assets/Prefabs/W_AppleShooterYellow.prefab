@@ -128,5 +128,5 @@ MonoBehaviour:
   bulletPrefab: {fileID: 171583285083932228, guid: 53a30b8c08725e54d950a845946dfe27,
     type: 3}
   target: {fileID: 0}
-  shootingFrequency: 1
+  shootingFrequency: 0.8
   level: 2

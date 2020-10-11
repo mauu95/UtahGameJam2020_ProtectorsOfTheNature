@@ -47,7 +47,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 9016504836107254066, guid: 2a342b7cbf7c64c4fafb210b2b62e0b1,
     type: 3}
   target: {fileID: 0}
-  shootingFrequency: 1
+  shootingFrequency: 0.4
   level: 3
 --- !u!1 &8428950491738793162
 GameObject:
