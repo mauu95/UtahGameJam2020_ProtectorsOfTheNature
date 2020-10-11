@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class EnemyController : MonoBehaviour
 {
@@ -28,6 +27,13 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         _initialPosition = transform.position;
+        StartCoroutine(PlayKamikazeScream());
+    }
+
+    private IEnumerator PlayKamikazeScream()
+    {
+        AudioManager.Instance.PlayKamikazeVoice();
+        yield return new WaitForSeconds(Random.Range(1.0f, 2.0f));
     }
 
 
@@ -41,13 +47,15 @@ public class EnemyController : MonoBehaviour
     {
         if (other.CompareTag("TreeBlock"))
         {
+            AudioManager.Instance.PlayKamikazeDeath();
             LevelManager.Instance.UpdatePlayerMoney(50);
-            
+
             _healthBarScript.TakeDamage(toTowerDamage);
             if (_healthBarScript.health == 0)
             {
                 SceneManager.LoadScene("GameOver");
-            } 
+            }
+
             Destroy(gameObject);
         }
     }

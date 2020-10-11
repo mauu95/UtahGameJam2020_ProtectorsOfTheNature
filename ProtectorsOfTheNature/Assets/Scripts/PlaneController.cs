@@ -46,6 +46,7 @@ public class PlaneController : MonoBehaviour
     {
         if (other.CompareTag("TreeBlock"))
         {
+            AudioManager.Instance.PlayExplosion();
             LevelManager.Instance.UpdatePlayerMoney(45);
 
             _healthBarScript.TakeDamage(toTowerDamage);
