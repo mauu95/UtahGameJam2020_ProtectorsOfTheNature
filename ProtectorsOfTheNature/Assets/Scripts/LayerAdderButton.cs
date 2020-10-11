@@ -12,6 +12,9 @@ public class LayerAdderButton : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (Resources.FindObjectsOfTypeAll<PurchaseMenu>()[0].isActiveAndEnabled)
+                return;
+
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
             if (hit.collider != null && hit.collider.gameObject == gameObject)
