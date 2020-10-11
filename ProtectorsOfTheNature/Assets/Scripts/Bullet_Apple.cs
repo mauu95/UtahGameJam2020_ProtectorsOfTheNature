@@ -13,19 +13,25 @@ public class Bullet_Apple : MonoBehaviour
     {
         if (transform.position == target)
             Destroy(gameObject);
-        
-        if(isTargetSet)
+
+        if (isTargetSet)
             transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * speed);
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Enemy>())
+        if (collision.CompareTag("KamikazeEnemy"))
         {
+            LevelManager.Instance.UpdatePlayerMoney(10);
             Destroy(collision.gameObject);
             Destroy(gameObject);
-            LevelManager.Instance.UpdatePlayerMoney(50);
+        }
+
+        if (collision.CompareTag("EnemyPlane"))
+        {
+            LevelManager.Instance.UpdatePlayerMoney(20);
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
 

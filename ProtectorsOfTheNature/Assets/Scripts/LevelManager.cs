@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 using Utility;
 using Random = UnityEngine.Random;
@@ -20,14 +19,12 @@ public class LevelManager : Singleton<LevelManager>
 
     [SerializeField] private GameObject _planePrefab;
 
-    private int _initialMoney = 10000;
+    [SerializeField] [Range(100, 10000)] private int _initialMoney;
 
     public int currentMoney { get; set; }
 
-    [Range(0f,1f)]
-    public float mobsSpawnSpeed = 0;
+    [Range(0f, 1f)] public float mobsSpawnSpeed = 0;
     public float maxWait = 2f;
-
 
 
     private void Start()
@@ -52,7 +49,7 @@ public class LevelManager : Singleton<LevelManager>
 
     private IEnumerator GeneratePlanes()
     {
-        while(true)
+        while (true)
         {
             Transform spawnPoint = _spawnPoints[Random.Range(2, _spawnPoints.Length)];
             Instantiate(_planePrefab, spawnPoint.position, Quaternion.identity);

@@ -48,7 +48,6 @@ public class EnemyController : MonoBehaviour
         if (other.CompareTag("TreeBlock"))
         {
             AudioManager.Instance.PlayKamikazeDeath();
-            LevelManager.Instance.UpdatePlayerMoney(50);
 
             _healthBarScript.TakeDamage(toTowerDamage);
             if (_healthBarScript.health == 0)

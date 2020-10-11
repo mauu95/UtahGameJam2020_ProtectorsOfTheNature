@@ -328,7 +328,7 @@ Transform:
   m_LocalScale: {x: 42.381714, y: 4.7423086, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &115333172
 GameObject:
@@ -663,8 +663,10 @@ MonoBehaviour:
     type: 3}
   _planePrefab: {fileID: 1201322051833049257, guid: c6d4453b278682e418993ba1832be560,
     type: 3}
+  _initialMoney: 300
   mobsSpawnSpeed: 0
   maxWait: 3
+--- !u!4 &346303752
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -676,7 +678,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &350363287
 GameObject:
@@ -833,7 +835,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &624379695
 GameObject:
@@ -1783,7 +1785,7 @@ Transform:
   m_LocalScale: {x: 1.3945119, y: 1.383852, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1119494069
 GameObject:
@@ -2637,7 +2639,7 @@ Transform:
   m_Children:
   - {fileID: 873201532}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1730126914
 GameObject:
@@ -3210,7 +3212,7 @@ Transform:
   m_LocalScale: {x: 30.84, y: 1.098589, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1967389130
 Rigidbody2D:
