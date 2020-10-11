@@ -28,4 +28,9 @@ public class Tower : MonoBehaviour
         }
         
     }
+
+    public bool MaxTreeReached()
+    {
+        return _actualLayer >= maxLayer;
+    }
 }

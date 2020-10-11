@@ -2,6 +2,12 @@
 
 public class LayerAdderButton : MonoBehaviour
 {
+
+    private void Start()
+    {
+        if (FindObjectOfType<Tower>().MaxTreeReached())
+            gameObject.SetActive(false);
+    }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
