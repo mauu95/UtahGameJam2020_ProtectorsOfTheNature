@@ -21,7 +21,7 @@ public class LevelManager : Singleton<LevelManager>
 
     [SerializeField] private GameObject _planePrefab;
 
-    private int _initialMoney = 500;
+    [SerializeField] private int _initialMoney = 500;
 
     public int currentMoney { get; set; }
 
@@ -66,7 +66,7 @@ public class LevelManager : Singleton<LevelManager>
         {
             Transform spawnPoint = _spawnPoints[Random.Range(0, 2)];
             Instantiate(_kamikazePrefab, spawnPoint.position, Quaternion.identity);
-            yield return new WaitForSeconds(maxWait - (mobsSpawnSpeed * maxWait) + 0.1f);
+            yield return new WaitForSeconds(maxWait - (mobsSpawnSpeed * maxWait) + 0.2f);
         }
     }
 

@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c77a9870412174a89e5f5c64c05443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
 --- !u!50 &-3314877132115619307
 Rigidbody2D:
   serializedVersion: 4
@@ -119,7 +120,7 @@ Transform:
   m_GameObject: {fileID: 7286423370195994293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.32, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6286066, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7546515079181415774}
   m_RootOrder: 0
@@ -163,7 +164,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 862405ec31d80824b996a760045f6db4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b2aa67a95b38a044d937126bab912be1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
